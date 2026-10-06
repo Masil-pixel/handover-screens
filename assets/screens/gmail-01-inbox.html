@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      tailwind = { config: { corePlugins: { preflight: false } } };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans%3Awght%40200..800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+      }
+    </style>
+
+    <style>
+      body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  
+    <style>
+      /* Handover behaviour: keep top and bottom bars fixed; scroll email list only. */
+      body > [data-pencil-name="Inbox"] > div:nth-of-type(3) {
+        min-height: 0 !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+      }
+    </style>
+</head>
+  <body style="background-color: #f0f0f0ff">
+    <div
+      data-pencil-name="Inbox"
+      class="box-border w-[402px] h-[874px] flex flex-col gap-0 justify-start items-start bg-[#f0f0f0ff] overflow-hidden relative"
+    >
+      <div
+        data-pencil-name="Status Bar - Light"
+        class="box-border w-[402px] h-[44px] shrink-0 overflow-hidden relative [z-index:0]"
+      >
+        <svg
+          data-pencil-name="Rectangle 4"
+          viewBox="0 0 428 44"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="box-border w-[402px] h-[44px] absolute left-0 top-0 overflow-visible [z-index:0]"
+        >
+          <path
+            d="M0 0L428 0L428 44L0 44L0 0Z"
+            fill="none"
+            stroke-width="1"
+            stroke-linejoin="miter"
+          ></path>
+        </svg>
+        <div
+          data-pencil-name="Time"
+          class="text-[14px]/[normal] box-border absolute left-[24px] top-[13.215px] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[0.7px] text-right [white-space:nowrap] [z-index:1]"
+        >
+          3:47
+        </div>
+        <div
+          data-pencil-name="Status Icons"
+          class="box-border w-[66.661px] h-[11px] absolute left-[311.339px] top-[16.333px] [z-index:2]"
+        >
+          <svg
+            data-pencil-name="Path 3"
+            viewBox="0 0 17 10.666999816894531"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="box-border w-[17px] h-[10.667px] absolute left-0 top-0 overflow-visible [z-index:0]"
+          >
+            <path
+              d="M16 0L15 0C14.734783 0 14.480444 0.10535608 14.292908 0.29289246C14.105371 0.48042881 14 0.73478353 14 1L14 9.6669998C14 9.9322166 14.105371 10.186571 14.292908 10.374107C14.480444 10.561644 14.734783 10.667 15 10.667L16 10.667C16.265217 10.667 16.519587 10.561644 16.707123 10.374107C16.894659 10.186571 17 9.9322166 17 9.6669998L17 1C17 0.73478353 16.894659 0.48042881 16.707123 0.29289246C16.519587 0.10535608 16.265217 0 16 0ZM10.333008 2.3330002L11.333008 2.3330002C11.598225 2.3330002 11.852594 2.4383562 12.040131 2.6258926C12.227667 2.8134291 12.333008 3.0677836 12.333008 3.3330002L12.333008 9.6669998C12.333008 9.9322166 12.227667 10.186571 12.040131 10.374107C11.852594 10.561644 11.598225 10.667 11.333008 10.667L10.333008 10.667C10.067791 10.667 9.8134518 10.561644 9.6259155 10.374107C9.4383793 10.186571 9.3330078 9.9322166 9.3330078 9.6669998L9.3330078 3.3339996C9.3330078 3.068783 9.4383793 2.8144286 9.6259155 2.6268921C9.8134518 2.4393556 10.067791 2.3330002 10.333008 2.3330002ZM6.6660156 4.6669998L5.6660156 4.6669998C5.4007993 4.6669998 5.1464291 4.772356 4.9588928 4.9598923C4.7713566 5.1474285 4.6660156 5.4017835 4.6660156 5.6669998L4.6660156 9.6669998C4.6660156 9.9322166 4.7713566 10.186571 4.9588928 10.374107C5.1464291 10.561644 5.4007993 10.667 5.6660156 10.667L6.6660156 10.667C6.931232 10.667 7.1855717 10.561644 7.3731079 10.374107C7.5606441 10.186571 7.6660156 9.9322166 7.6660156 9.6669998L7.6660156 5.6669998C7.6660156 5.4017835 7.5606441 5.1474285 7.3731079 4.9598923C7.1855717 4.772356 6.931232 4.6669998 6.6660156 4.6669998ZM2 6.6669998L1 6.6669998C0.73478353 6.6669998 0.48044407 6.772356 0.29290771 6.9598923C0.10537134 7.1474285 0 7.4017835 0 7.6669998L0 9.6669998C0 9.9322166 0.10537134 10.186571 0.29290771 10.374107C0.48044407 10.561644 0.73478353 10.667 1 10.667L2 10.667C2.2652166 10.667 2.5195863 10.561644 2.7071228 10.374107C2.8946593 10.186571 3 9.9322166 3 9.6669998L3 7.6669998C3 7.4017835 2.8946593 7.1474285 2.7071228 6.9598923C2.5195863 6.772356 2.2652166 6.6669998 2 6.6669998Z"
+              fill="#141414ff"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            data-pencil-name="Path 4"
+            viewBox="0 0 15.3304443359375 11.000144958496094"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="box-border w-[15.33px] h-[11px] absolute left-[22.004px] top-0 overflow-visible [z-index:1]"
+          >
+            <path
+              d="M7.6628113 2.2852879C9.8864384 2.2842312 12.025594 3.1368933 13.638794 4.6672878C13.696956 4.724452 13.775261 4.7564831 13.856812 4.7564831C13.938362 4.7564831 14.016637 4.724452 14.074799 4.6672878L15.234802 3.4972878C15.265098 3.4673405 15.289157 3.431679 15.305573 3.3923702C15.321988 3.3530614 15.330444 3.3108864 15.330444 3.2682877C15.330444 3.2256889 15.321988 3.1835139 15.305573 3.1442051C15.289157 3.1048963 15.265098 3.0692348 15.234802 3.0392876C13.197262 1.0887638 10.485453 -3.5527137e-15 7.6647949 0C4.8441367 3.5527137e-15 2.1323278 1.0887638 0.094787598 3.0392876C0.034088548 3.1000409 0 3.1824079 0 3.2682877C0 3.3541675 0.034088548 3.4365344 0.094787598 3.4972878L1.2497864 4.6672878C1.3076522 4.7246299 1.3858202 4.7567997 1.4672852 4.7567997C1.5487502 4.7567997 1.6269486 4.7246299 1.6848145 4.6672878C3.2987401 3.1367683 5.438571 2.284128 7.6628113 2.2852879ZM7.6628113 6.0922871C8.8849688 6.0922785 10.063521 6.5463176 10.969788 7.3662872C11.028805 7.4221187 11.107273 7.4527292 11.188507 7.4516087C11.269741 7.4504881 11.34733 7.4177265 11.404785 7.3602886L12.563812 6.1902885C12.594319 6.1601524 12.61854 6.1242595 12.635071 6.084692C12.651602 6.0451245 12.660095 6.0026693 12.660095 5.9597874C12.660095 5.9169054 12.651602 5.8744502 12.635071 5.8348827C12.61854 5.7953153 12.594319 5.7594242 12.563812 5.7292881C11.233188 4.4929957 9.4840946 3.8058643 7.6677856 3.8058643C5.8514762 3.8058643 4.1024137 4.4929957 2.7717896 5.7292881C2.7412825 5.7594242 2.7170622 5.7953153 2.700531 5.8348827C2.6839998 5.8744502 2.6755066 5.9169054 2.6755066 5.9597874C2.6755066 6.0026693 2.6839998 6.0451245 2.700531 6.084692C2.7170622 6.1242595 2.7412825 6.1601524 2.7717896 6.1902885L3.9307861 7.3602886C3.988241 7.4177265 4.0658607 7.4504881 4.1470947 7.4516087C4.2283287 7.4527292 4.306797 7.4221187 4.3658142 7.3662872C5.2694712 6.5485449 6.4440856 6.0946589 7.6628113 6.0922871ZM9.9848022 8.6542873C9.9857426 8.6971703 9.9778976 8.7397909 9.961731 8.77952C9.9455643 8.8192492 9.921423 8.8552465 9.8908081 8.8852882L7.8847961 10.907288C7.8556895 10.936707 7.8210287 10.960061 7.7828369 10.976C7.7446451 10.991939 7.7036767 11.000145 7.6622925 11.000145C7.6209083 11.000145 7.5799398 10.991939 7.541748 10.976C7.5035563 10.960061 7.4688954 10.936707 7.4397888 10.907288L5.4397888 8.8852882C5.4090552 8.8553114 5.3848171 8.8193502 5.3685303 8.7796268C5.3522434 8.7399035 5.3442798 8.6972628 5.3451233 8.6543388C5.3459668 8.6114149 5.3555784 8.5691204 5.3734131 8.5300674C5.3912477 8.4910145 5.416904 8.4560347 5.4487915 8.4272881C6.0692215 7.9032202 6.8551517 7.6157112 7.6672974 7.6157112C8.4794426 7.6157112 9.2653732 7.9032202 9.8858032 8.4272881C9.916832 8.4564381 9.9415989 8.4915915 9.9586182 8.5306149C9.9756374 8.5696383 9.9845514 8.6117153 9.9848022 8.6542873Z"
+              fill="#141414ff"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            data-pencil-name="Rectangle 5"
+            viewBox="0 0 21 10.333000183105469"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="box-border w-[21px] h-[10.333px] opacity-[0.35] absolute left-[42.833px] top-[0.5px] overflow-visible [z-index:2]"
+          >
+            <path
+              d="M2.1670001 0L18.833 0C20.0298 0 21 0.97019899 21 2.1670001L21 8.1660004C21 9.3628016 20.0298 10.333 18.833 10.333L2.1670001 10.333C0.97019899 10.333 0 9.3628016 0 8.1660004L0 2.1670001C0 0.97019899 0.97019899 0 2.1670001 0Z"
+              fill="none"
+              stroke="#141414ff"
+              stroke-width="1"
+              stroke-linejoin="miter"
+              vector-effect="non-scaling-stroke"
+            ></path>
+          </svg>
+          <svg
+            data-pencil-name="Path 5"
+            viewBox="0 0 1.328033447265625 4"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="box-border w-[1.328px] h-[4px] opacity-[0.4] absolute left-[65.333px] top-[3.667px] overflow-visible [z-index:3]"
+          >
+            <path
+              d="M0 0L0 4C0.39359975 3.8343019 0.72955441 3.5561502 0.96578979 3.2003841C1.2020252 2.8446181 1.3280334 2.4270558 1.3280334 2C1.3280334 1.5729443 1.2020252 1.1553818 0.96578979 0.79961586C0.72955441 0.44384989 0.39359975 0.16569801 0 0Z"
+              fill="#141414ff"
+              fill-rule="nonzero"
+            ></path>
+          </svg>
+          <svg
+            data-pencil-name="Rectangle 6"
+            viewBox="0 0 18 7.333000183105469"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="box-border w-[18px] h-[7.333px] absolute left-[44.333px] top-[2px] overflow-visible [z-index:4]"
+          >
+            <path
+              d="M1.3329999 0L16.667 0C17.403194 0 18 0.59680438 18 1.3329999L18 6C18 6.7361956 17.403194 7.3330002 16.667 7.3330002L1.3329999 7.3330002C0.59680438 7.3330002 0 6.7361956 0 6L0 1.3329999C0 0.59680438 0.59680438 0 1.3329999 0Z"
+              fill="#141414ff"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div
+        data-pencil-name="Navigation Bar"
+        class="box-border w-full h-[60px] shrink-0 flex flex-row gap-[8px] p-[20px] justify-between items-center overflow-hidden relative [z-index:1]"
+      >
+        <div
+          data-pencil-name="vuesax/outline/arrow-left"
+          class="box-border w-[20px] shrink-0 h-[20px] relative [z-index:0]"
+        >
+          <div
+            data-pencil-name="vuesax/outline/arrow-left"
+            class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+          >
+            <div
+              data-pencil-name="arrow-left"
+              class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+            >
+              <svg
+                data-pencil-name="Vector"
+                viewBox="0 0 7.565000534057617 13.637499809265137"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="box-border w-[6.304px] h-[11.365px] absolute left-[2.294px] top-[4.319px] overflow-visible [z-index:0]"
+              >
+                <path
+                  d="M6.8174996 13.6375C6.6274996 13.6375 6.4375 13.5675 6.2874999 13.4175L0.2175 7.3474998C-0.07249999 7.0574999 -0.07249999 6.5775003 0.2175 6.2875004L6.2874999 0.2175C6.5774999 -0.07249999 7.0575004 -0.07249999 7.3475003 0.2175C7.6375003 0.50749999 7.6375003 0.98749995 7.3475003 1.2774999L1.8074999 6.8175001L7.3475003 12.357501C7.6375003 12.647501 7.6375003 13.127501 7.3475003 13.4175C7.2075005 13.5675 7.0074997 13.6375 6.8174996 13.6375Z"
+                  fill="#141414ff"
+                  fill-rule="nonzero"
+                ></path>
+              </svg>
+              <svg
+                data-pencil-name="Vector"
+                viewBox="0 0 18.329999923706055 1.5"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="box-border w-[15.275px] h-[1.25px] absolute left-[2.433px] top-[9.375px] overflow-visible [z-index:1]"
+              >
+                <path
+                  d="M17.58 1.5L0.75 1.5C0.34 1.5 0 1.16 0 0.75C0 0.34 0.34 0 0.75 0L17.58 0C17.99 0 18.33 0.34 18.33 0.75C18.33 1.16 17.99 1.5 17.58 1.5Z"
+                  fill="#141414ff"
+                  fill-rule="nonzero"
+                ></path>
+              </svg>
+              <svg
+                data-pencil-name="Vector"
+                viewBox="0 0 24 24"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="box-border w-[20px] h-[20px] opacity-[0] absolute left-0 top-0 overflow-visible [z-index:2]"
+              >
+                <path
+                  d="M0 0L24 0L24 24L0 24L0 0Z"
+                  fill="none"
+                  stroke-width="1"
+                  stroke-linejoin="miter"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-name="Rectangle 47"
+          class="box-border w-[30px] shrink-0 h-[30px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px] relative [z-index:1]"
+        ></div>
+        <div
+          data-pencil-name="Frame 2147227626"
+          class="box-border w-fit h-fit absolute left-[169.5px] top-[19px] flex flex-row gap-[4px] justify-start items-center [z-index:2]"
+        >
+          <div
+            data-pencil-name="Inbox"
+            class="text-[16px]/[22px] box-border text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.16px] text-center [white-space:nowrap]"
+          >
+            Inbox
+          </div>
+          <div
+            data-pencil-name="vuesax/outline/arrow-down"
+            class="box-border w-[16px] shrink-0 h-[16px] relative"
+          >
+            <div
+              data-pencil-name="vuesax/outline/arrow-down"
+              class="box-border w-[16px] h-[16px] absolute left-0 top-0 [z-index:0]"
+            >
+              <div
+                data-pencil-name="arrow-down"
+                class="box-border w-[16px] h-[16px] absolute left-0 top-0 [z-index:0]"
+              >
+                <svg
+                  data-pencil-name="Vector"
+                  viewBox="0 0 17.33500099182129 8.597498893737793"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="box-border w-[11.557px] h-[5.732px] absolute left-[2.222px] top-[5.468px] overflow-visible [z-index:0]"
+                >
+                  <path
+                    d="M8.6675005 8.5974989C7.9675007 8.5974989 7.2674999 8.3275003 6.7374997 7.7975001L0.2175 1.2774994C-0.07249999 0.98749948 -0.07249999 0.50749999 0.2175 0.2175C0.50749999 -0.07249999 0.98750019 -0.07249999 1.2775002 0.2175L7.7975001 6.7374997C8.2775002 7.2174997 9.0575008 7.2174997 9.5375004 6.7374997L16.057499 0.2175C16.3475 -0.07249999 16.827499 -0.07249999 17.1175 0.2175C17.407501 0.50749999 17.407501 0.98749948 17.1175 1.2774994L10.597501 7.7975001C10.067501 8.3275003 9.3675003 8.5974989 8.6675005 8.5974989Z"
+                    fill="#141414ff"
+                    fill-rule="nonzero"
+                  ></path>
+                </svg>
+                <svg
+                  data-pencil-name="Vector"
+                  viewBox="0 0 24 24"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="box-border w-[16px] h-[16px] opacity-[0] absolute left-0 top-0 overflow-visible [z-index:1]"
+                >
+                  <path
+                    d="M0 0L24 0L24 24L0 24L0 0Z"
+                    fill="none"
+                    stroke-width="1"
+                    stroke-linejoin="miter"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-pencil-name="Navigation Bar"
+        class="box-border w-full [flex:1_1_0] flex flex-col gap-[8px] p-[8px] justify-start items-start overflow-hidden relative [z-index:2]"
+      >
+        <div
+          data-pencil-name="Navigation Bar"
+          class="box-border w-full h-fit shrink-0 flex flex-row gap-[8px] p-[0px_8px] justify-between items-center overflow-hidden"
+        >
+          <div
+            data-pencil-name="Inbox"
+            class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+          >
+            Inbox
+          </div>
+        </div>
+        <div
+          data-pencil-name="Frame 76"
+          class="box-border w-full h-[1023px] shrink-0 flex flex-col gap-0 justify-start items-start bg-[#fdfdfdff] rounded-[20px] overflow-hidden"
+        >
+          <div
+            data-pencil-name="Frame 68"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] rounded-[99999px] overflow-hidden relative"
+              >
+                <div
+                  class="absolute top-0 left-0 w-full h-full overflow-hidden rounded-[inherit] [z-index:0]"
+                >
+                  <div
+                    class="absolute top-0 left-0 w-full h-full [transform-origin:0_0] bg-[url('')] bg-no-repeat bg-[length:100%_100%] [transform:matrix(1.568,_0,_0,_2.1,_-13.78,_-12.723)]"
+                  ></div>
+                </div>
+                <div
+                  class="absolute top-0 left-0 w-full h-full bg-[url('')] bg-no-repeat bg-cover bg-center [z-index:1]"
+                ></div>
+                <div
+                  class="absolute top-0 left-0 w-full h-full bg-[url('')] bg-no-repeat bg-cover bg-center [z-index:2]"
+                ></div>
+              </div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[4px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Dina
+                </div>
+                <div
+                  data-pencil-name="08:15"
+                  class="text-[12px]/[normal] box-border text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  08:15
+                </div>
+                <div
+                  data-pencil-name="Ellipse 2"
+                  class="box-border w-[8px] shrink-0 h-[8px] bg-[#3478f6ff] rounded-full"
+                ></div>
+              </div>
+              <div
+                data-pencil-name="Update on today's client calls"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Update on today's client calls
+              </div>
+              <div
+                data-pencil-name="Hi Team, I had productive calls with three clients this morning. We discussed project timelines and next steps. I'll share detailed notes by end of day. Best, Dina"
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Hi Team, I had productive calls with three clients this morning. We discussed
+                project timelines and next steps. I'll share detailed notes by end of day. Best,
+                Dina
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 69"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Arif
+                </div>
+                <div
+                  data-pencil-name="08:25"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  08:25
+                </div>
+              </div>
+              <div
+                data-pencil-name="Morning stand-up summary"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Morning stand-up summary
+              </div>
+              <div
+                data-pencil-name="The team aligned on sprint goals and identified blockers. Development is on track, but QA needs additional resources. Planning to address this by tomorrow."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                The team aligned on sprint goals and identified blockers. Development is on track,
+                but QA needs additional resources. Planning to address this by tomorrow.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 70"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Nina
+                </div>
+                <div
+                  data-pencil-name="08:40"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  08:40
+                </div>
+              </div>
+              <div
+                data-pencil-name="Inventory status update"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Inventory status update
+              </div>
+              <div
+                data-pencil-name="Warehouse stock levels are stable. Some items are running low and will be reordered today to avoid shortages next week."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Warehouse stock levels are stable. Some items are running low and will be reordered
+                today to avoid shortages next week.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 71"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Rizal
+                </div>
+                <div
+                  data-pencil-name="09:00"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  09:00
+                </div>
+              </div>
+              <div
+                data-pencil-name="Feedback on marketing materials"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Feedback on marketing materials
+              </div>
+              <div
+                data-pencil-name="Reviewed the latest brochures and social media posts. Suggested minor edits to improve clarity and engagement. Will send revised versions soon."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Reviewed the latest brochures and social media posts. Suggested minor edits to
+                improve clarity and engagement. Will send revised versions soon.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 72"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Maya
+                </div>
+                <div
+                  data-pencil-name="09:30"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  09:30
+                </div>
+              </div>
+              <div
+                data-pencil-name="Client feedback summary"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Client feedback summary
+              </div>
+              <div
+                data-pencil-name="Clients appreciated the new features but requested more customization options. Planning a follow-up meeting to discuss possibilities."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Clients appreciated the new features but requested more customization options.
+                Planning a follow-up meeting to discuss possibilities.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 73"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Arif
+                </div>
+                <div
+                  data-pencil-name="10:00"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  10:00
+                </div>
+              </div>
+              <div
+                data-pencil-name="UI design review"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                UI design review
+              </div>
+              <div
+                data-pencil-name="The design team proposed new layouts for the dashboard. Positive feedback overall, with recommendations to enhance accessibility."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                The design team proposed new layouts for the dashboard. Positive feedback overall,
+                with recommendations to enhance accessibility.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 74"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Sari
+                </div>
+                <div
+                  data-pencil-name="10:45"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  10:45
+                </div>
+              </div>
+              <div
+                data-pencil-name="Sprint progress update"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Sprint progress update
+              </div>
+              <div
+                data-pencil-name="Completed tasks are ahead of schedule. Remaining work focuses on bug fixes and performance improvements."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Completed tasks are ahead of schedule. Remaining work focuses on bug fixes and
+                performance improvements.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 75"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Joko
+                </div>
+                <div
+                  data-pencil-name="11:15"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  11:15
+                </div>
+              </div>
+              <div
+                data-pencil-name="Social media campaign plan"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Social media campaign plan
+              </div>
+              <div
+                data-pencil-name="Drafted a campaign targeting young professionals. Collaborating with influencers to increase reach and engagement."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Drafted a campaign targeting young professionals. Collaborating with influencers to
+                increase reach and engagement.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 76"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Olivia
+                </div>
+                <div
+                  data-pencil-name="11:45"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  11:45
+                </div>
+              </div>
+              <div
+                data-pencil-name="Budget review notes"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Budget review notes
+              </div>
+              <div
+                data-pencil-name="Reviewed current expenditures and identified potential savings in vendor contracts. Preparing recommendations for next meeting."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Reviewed current expenditures and identified potential savings in vendor contracts.
+                Preparing recommendations for next meeting.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 77"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Fajar
+                </div>
+                <div
+                  data-pencil-name="12:10"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  12:10
+                </div>
+              </div>
+              <div
+                data-pencil-name="Technical issue report"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Technical issue report
+              </div>
+              <div
+                data-pencil-name="Encountered delays due to API integration errors. Working with the vendor to resolve and minimize impact."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Encountered delays due to API integration errors. Working with the vendor to resolve
+                and minimize impact.
+              </div>
+            </div>
+          </div>
+          <div
+            data-pencil-name="Frame 78"
+            class="box-border w-full h-fit shrink-0 flex flex-row gap-[12px] p-[16px_20px] justify-start items-start [border-width:0px_0px_1px_0px] [border-style:solid] [border-color:#1414140d]"
+          >
+            <div
+              data-pencil-name="Frame 2147227627"
+              class="box-border w-fit shrink-0 h-fit flex flex-row gap-[12px] justify-start items-center"
+            >
+              <div
+                data-pencil-name="Rectangle 47"
+                class="box-border w-[40px] shrink-0 h-[40px] bg-[url('')] bg-no-repeat bg-cover bg-center rounded-[99999px]"
+              ></div>
+            </div>
+            <div
+              data-pencil-name="Text"
+              class="box-border [flex:1_1_0] h-fit flex flex-col gap-0 justify-start items-start"
+            >
+              <div
+                data-pencil-name="Name"
+                class="box-border w-full h-fit shrink-0 flex flex-row gap-[3px] justify-start items-center"
+              >
+                <div
+                  data-pencil-name="Name"
+                  class="text-[14px]/[20px] box-border [flex:1_1_0] text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+                >
+                  Alya
+                </div>
+                <div
+                  data-pencil-name="12:50"
+                  class="text-[12px]/[normal] box-border text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.12px] text-left [white-space:nowrap]"
+                >
+                  12:50
+                </div>
+              </div>
+              <div
+                data-pencil-name="User testing feedback"
+                class="text-[14px]/[20px] box-border w-full text-[#141414ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                User testing feedback
+              </div>
+              <div
+                data-pencil-name="Beta testers reported positive experiences but noted some navigation difficulties. Prioritizing fixes for the next update."
+                class="text-[14px]/[20px] box-border w-full text-[#868686ff] font-['SF_Pro',system-ui,sans-serif] font-normal tracking-[-0.14px] text-left"
+              >
+                Beta testers reported positive experiences but noted some navigation difficulties.
+                Prioritizing fixes for the next update.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-pencil-name="Container"
+        class="box-border w-full h-[70px] shrink-0 flex flex-row gap-0 justify-start items-center relative [z-index:3]"
+      >
+        <div
+          data-pencil-name="Icon and Label Container"
+          class="box-border [flex:1_1_0] h-full flex flex-col gap-[8px] p-[24px_16px] justify-end items-center"
+        >
+          <div
+            data-pencil-name="Frame 2147227799"
+            class="box-border w-fit h-fit shrink-0 flex flex-row gap-[10px] p-[8px_20px] justify-start items-center bg-[#0078ff1a] rounded-[99999px] relative"
+          >
+            <div
+              data-pencil-name="Inbox Icon"
+              class="box-border w-[20px] shrink-0 h-[20px] relative [z-index:0]"
+            >
+              <div
+                data-pencil-name="vuesax/bold/direct-inbox"
+                class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+              >
+                <div
+                  data-pencil-name="direct-inbox"
+                  class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+                >
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 20 9.770000457763672"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[16.667px] h-[8.142px] absolute left-[1.667px] top-[10.192px] overflow-visible [z-index:0]"
+                  >
+                    <path
+                      d="M19.299999 0L15.82 0C14.84 0 13.969999 0.54000008 13.53 1.4200001L12.69 3.0800009C12.49 3.480001 12.089999 3.7300005 11.65 3.7300005L8.3699999 3.7300005C8.0599995 3.7300005 7.6199999 3.6600008 7.3299999 3.0800009L6.4899998 1.4300003C6.0499997 0.5600003 5.1700001 0.010000229 4.1999998 0.010000229L0.70000005 0.010000229C0.31000006 0.010000229 0 0.32000005 0 0.71000004L0 3.9700012C0 7.6000013 2.1800001 9.7700005 5.8200002 9.7700005L14.200001 9.7700005C17.630001 9.7700005 19.74 7.8900013 20 4.5500011L20 0.70000076C20 0.32000077 19.689999 0 19.299999 0Z"
+                      fill="#0078ffff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[20px] h-[20px] opacity-[0] absolute left-0 top-0 overflow-visible [z-index:1]"
+                  >
+                    <path d="M0 0L24 0L24 24L0 24L0 0Z" fill="#0078ffff"></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 1.5 2.75"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[1.25px] h-[2.292px] absolute left-[9.375px] top-[1.042px] overflow-visible [z-index:2]"
+                  >
+                    <path
+                      d="M1.5 0.75C1.5 0.34 1.16 0 0.75 0C0.34 0 0 0.34 0 0.75L0 2.75L1.5 2.75L1.5 0.75Z"
+                      fill="#0078ffff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 20 10.449999809265137"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[16.667px] h-[8.708px] absolute left-[1.667px] top-[3.333px] overflow-visible [z-index:3]"
+                  >
+                    <path
+                      d="M20 5.8100004L20 6.8500004C19.780001 6.7700005 19.539999 6.7299995 19.299999 6.7299995L15.82 6.7299995C14.27 6.7299995 12.879999 7.5900002 12.19 8.9700003L11.44 10.45L8.5799999 10.45L7.8299999 8.9799995C7.1399999 7.5899997 5.75 6.7299995 4.1999998 6.7299995L0.70000005 6.7299995C0.46000004 6.7299995 0.22 6.7700005 0 6.8500004L0 5.8100004C0 2.1700003 2.1699998 0 5.8099999 0L9.25 0L9.25 3.1900001L8.5299997 2.4699998C8.2399998 2.1799998 7.7600002 2.1799998 7.4700003 2.4699998C7.1800003 2.7599998 7.1800003 3.2400002 7.4700003 3.5300002L9.4700003 5.5299997C9.4800005 5.54 9.4899998 5.54 9.4899998 5.5500002C9.5599995 5.6100001 9.6300001 5.6599994 9.71 5.6899996C9.8100004 5.7299995 9.8999996 5.75 10 5.75C10.1 5.75 10.19 5.7299995 10.28 5.6899996C10.37 5.6599994 10.46 5.5999999 10.53 5.5299997L12.53 3.5300002C12.82 3.2400002 12.82 2.7599998 12.53 2.4699998C12.24 2.1799998 11.76 2.1799998 11.47 2.4699998L10.75 3.1900001L10.75 0L14.190001 0C17.83 0 20 2.1700003 20 5.8100004Z"
+                      fill="#0078ffff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[20px] h-[20px] [transform:rotate(-180deg)] [transform-origin:top_left] opacity-[0] absolute left-[20px] top-[20px] overflow-visible [z-index:4]"
+                  >
+                    <path
+                      d="M0 0L24 0L24 24L0 24L0 0Z"
+                      fill="none"
+                      stroke-width="1"
+                      stroke-linejoin="miter"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              data-pencil-name="Notification Badge"
+              class="box-border w-fit h-fit absolute left-[29px] top-[5px] flex flex-row gap-[10px] p-[2px_4px] justify-center items-center bg-[#ea3829ff] rounded-[99999px] [z-index:1]"
+            >
+              <div
+                data-pencil-name="Badge Count"
+                class="text-[8px]/[normal] box-border text-[#f9f9f9ff] font-['Plus_Jakarta_Sans',system-ui,sans-serif] font-normal text-center [white-space:nowrap]"
+              >
+                40
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-pencil-name="Icon and Label Container"
+          class="box-border [flex:1_1_0] h-full flex flex-col gap-[8px] p-[24px_16px] justify-end items-center"
+        >
+          <div
+            data-pencil-name="Frame 2147227799"
+            class="box-border w-fit h-fit shrink-0 flex flex-row gap-[10px] p-[8px_20px] justify-start items-center rounded-[99999px]"
+          >
+            <div
+              data-pencil-name="Profile Icon"
+              class="box-border w-[20px] shrink-0 h-[20px] relative"
+            >
+              <div
+                data-pencil-name="vuesax/outline/video"
+                class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+              >
+                <div
+                  data-pencil-name="video"
+                  class="box-border w-[20px] h-[20px] absolute left-0 top-0 [z-index:0]"
+                >
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 15.690000534057617 17.720001220703125"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[13.075px] h-[14.767px] absolute left-[1.667px] top-[2.617px] overflow-visible [z-index:0]"
+                  >
+                    <path
+                      d="M10.88 17.720001L4.8099999 17.720001C1.26 17.720001 0 15.229999 0 12.909999L0 4.8099995C0 1.3499994 1.3499999 0 4.8099999 0L10.88 0C14.34 0 15.690001 1.3499994 15.690001 4.8099995L15.690001 12.909999C15.690001 16.369999 14.34 17.720001 10.88 17.720001ZM4.8099999 1.5199997C2.2 1.5199997 1.52 2.1999996 1.52 4.8099995L1.52 12.909999C1.52 14.139999 1.95 16.200001 4.8099999 16.200001L10.88 16.200001C13.49 16.200001 14.17 15.519999 14.17 12.909999L14.17 4.8099995C14.17 2.1999996 13.49 1.5199997 10.88 1.5199997L4.8099999 1.5199997L4.8099999 1.5199997Z"
+                      fill="#868686ff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 5.960464477539063e-8 6.569999694824219 12.221812188625336"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[5.475px] h-[10.185px] absolute left-[13.483px] top-[4.907px] overflow-visible [z-index:1]"
+                  >
+                    <path
+                      d="M4.6000004 12.221812C4.1700006 12.221812 3.6199999 12.081812 2.9899998 11.641812L0.31999969 9.7718115C0.11999969 9.6318111 0 9.4018116 0 9.1518116L0 3.0718112C0 2.8218112 0.11999969 2.5918114 0.31999969 2.4518113L2.9899998 0.58181095C4.1799998 -0.24818903 5.0499992 -0.0081886798 5.4599991 0.20181131C5.8699989 0.42181131 6.5699997 0.99181104 6.5699997 2.4418111L6.5699997 9.7718115C6.5699997 11.221811 5.8699989 11.801811 5.4599991 12.011811C5.269999 12.121811 4.9700003 12.221812 4.6000004 12.221812ZM1.5100002 8.751812L3.8600006 10.391812C4.3100004 10.701813 4.6300001 10.731811 4.7600002 10.661811C4.9000001 10.591811 5.0499992 10.311811 5.0499992 9.7718115L5.0499992 2.4518113C5.0499992 1.9018114 4.8900003 1.631811 4.7600002 1.561811C4.6300001 1.4918109 4.3100004 1.521811 3.8600006 1.831811L1.5100002 3.4718108L1.5100002 8.751812Z"
+                      fill="#868686ff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 4.5 4.5"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[3.75px] h-[3.75px] absolute left-[7.708px] top-[6.042px] overflow-visible [z-index:2]"
+                  >
+                    <path
+                      d="M2.25 4.5C1.01 4.5 0 3.49 0 2.25C0 1.01 1.01 0 2.25 0C3.49 0 4.5 1.01 4.5 2.25C4.5 3.49 3.49 4.5 2.25 4.5ZM2.25 1.5C1.84 1.5 1.5 1.84 1.5 2.25C1.5 2.6600001 1.84 3 2.25 3C2.6600001 3 3 2.6600001 3 2.25C3 1.84 2.6600001 1.5 2.25 1.5Z"
+                      fill="#868686ff"
+                      fill-rule="nonzero"
+                    ></path>
+                  </svg>
+                  <svg
+                    data-pencil-name="Vector"
+                    viewBox="0 0 24 24"
+                    preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="box-border w-[20px] h-[20px] opacity-[0] absolute left-0 top-0 overflow-visible [z-index:3]"
+                  >
+                    <path
+                      d="M0 0L24 0L24 24L0 24L0 0Z"
+                      fill="none"
+                      stroke-width="1"
+                      stroke-linejoin="miter"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-pencil-name="Frame 22"
+        class="box-border w-[402px] h-fit absolute left-0 top-[841px] flex flex-col gap-0 justify-start items-start [z-index:4]"
+      >
+        <div data-pencil-name="Home Indicator" class="box-border w-full h-[33px] shrink-0 relative">
+          <div
+            data-pencil-name="Home Indicator"
+            class="box-border w-[140.375px] h-[4.874px] [transform:scaleX(-1)] [transform-origin:top_left] absolute left-[271.188px] top-[20.327px] bg-[#141414ff] rounded-[97.483px] [z-index:0]"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

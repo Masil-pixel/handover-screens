@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dokumentasi handover desain untuk developer." />
+    <title>Handover screens</title>
+    <style>
+      :root {
+        --ink: #202124;
+        --muted: #697386;
+        --line: #e6e8ee;
+        --canvas: #f7f8fa;
+        --surface: #ffffff;
+        --accent: #2458e8;
+        --accent-soft: #eaf0ff;
+        --shadow: 0 10px 30px rgba(22, 35, 60, .08);
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: var(--canvas); font: 15px/1.5 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      button { font: inherit; }
+      .topbar { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+      .topbar__inner, main { max-width: 1480px; margin: 0 auto; padding-inline: 32px; }
+      .brand { padding: 24px 0 18px; display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+      h1, h2, h3, p { margin: 0; }
+      h1 { font-size: 20px; letter-spacing: -.02em; }
+      .subtitle { color: var(--muted); font-size: 13px; margin-top: 3px; }
+      .updated { color: var(--muted); font-size: 12px; white-space: nowrap; }
+      .tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 12px; }
+      .tab { cursor: pointer; border: 0; color: #586174; background: transparent; border-radius: 9px; padding: 9px 14px; white-space: nowrap; }
+      .tab:hover { background: #f1f3f7; }
+      .tab[aria-selected="true"] { background: var(--accent-soft); color: #1747c8; font-weight: 700; }
+      main { padding-block: 32px 64px; }
+      .section-head { margin-bottom: 24px; display: flex; justify-content: space-between; gap: 20px; align-items: end; }
+      h2 { font-size: 24px; letter-spacing: -.03em; }
+      .section-head p { color: var(--muted); margin-top: 5px; }
+      .count { color: var(--muted); font-size: 13px; }
+      .screen-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 28px 20px; }
+      .screen-card { min-width: 0; }
+      .screen-button { cursor: zoom-in; width: 100%; aspect-ratio: 402 / 874; display: grid; place-items: center; overflow: hidden; padding: 0; border: 1px solid var(--line); background: var(--surface); border-radius: 18px; box-shadow: var(--shadow); transition: transform .18s ease, box-shadow .18s ease; }
+      .screen-button:hover { transform: translateY(-3px); box-shadow: 0 16px 35px rgba(22, 35, 60, .14); }
+      .screen-button img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .screen-html { width: 100%; height: 100%; overflow: hidden; background: var(--surface); }
+      .screen-html iframe { width: 160%; height: 160%; border: 0; display: block; pointer-events: none; transform: scale(.625); transform-origin: top left; }
+      .placeholder { padding: 24px; text-align: center; color: var(--muted); }
+      .placeholder strong { color: #465166; display: block; margin-bottom: 4px; }
+      .card-title { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 12px; }
+      h3 { font-size: 14px; line-height: 1.35; }
+      .state { border-radius: 20px; background: #eff1f5; color: #566074; font-size: 11px; font-weight: 700; padding: 3px 8px; white-space: nowrap; }
+      .notes { color: var(--muted); font-size: 13px; margin-top: 5px; }
+      dialog { width: min(1020px, calc(100% - 32px)); max-height: min(880px, calc(100% - 32px)); padding: 0; border: 0; border-radius: 20px; box-shadow: 0 28px 90px rgba(15, 23, 42, .35); }
+      dialog::backdrop { background: rgba(17, 24, 39, .66); backdrop-filter: blur(3px); }
+      .modal { display: grid; grid-template-columns: minmax(0, 1fr) 310px; background: #fff; min-height: 540px; }
+      .modal__media { background: #f1f3f7; display: grid; place-items: center; padding: 28px; }
+      .modal__media img, .modal__media iframe { max-height: 760px; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 28px rgba(15, 23, 42, .18); }
+      .modal__media iframe { width: 402px; height: 874px; border: 0; background: #fff; }
+      .modal__content { padding: 28px; overflow: auto; }
+      .close { float: right; cursor: pointer; border: 0; width: 34px; height: 34px; border-radius: 9px; font-size: 22px; background: #f1f3f7; }
+      .modal__content h2 { clear: both; font-size: 22px; padding-top: 36px; }
+      .modal__label { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; margin: 27px 0 7px; }
+      .modal__notes { color: #455066; white-space: pre-line; }
+      @media (max-width: 700px) { .topbar__inner, main { padding-inline: 18px; } .brand { padding-top: 16px; } .updated { display: none; } .screen-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; } .modal { grid-template-columns: 1fr; } .modal__media { max-height: 55vh; } .modal__media img { max-height: 45vh; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">
+          <div><h1 id="project-name">Handover screens</h1><p class="subtitle" id="project-description">Dokumentasi visual untuk implementasi developer</p></div>
+          <span class="updated" id="last-updated"></span>
+        </div>
+        <nav class="tabs" aria-label="Pilih modul" id="tabs"></nav>
+      </div>
+    </header>
+    <main>
+      <div class="section-head"><div><h2 id="module-title"></h2><p id="module-description"></p></div><span class="count" id="screen-count"></span></div>
+      <section class="screen-grid" id="screen-grid" aria-live="polite"></section>
+    </main>
+
+    <dialog id="preview-dialog"><div class="modal"><div class="modal__media" id="modal-media"></div><div class="modal__content"><button class="close" aria-label="Tutup preview" id="close-dialog">×</button><h2 id="modal-title"></h2><p class="modal__label">State</p><p id="modal-state"></p><p class="modal__label">Notes untuk developer</p><p class="modal__notes" id="modal-notes"></p></div></div></dialog>
+
+    <script>
+      /*
+       * TAMBAH SCREEN DI SINI.
+       * - document: letakkan export HTML Pen di assets/screens/, contoh "assets/screens/gmail-01-inbox.html"
+       * - state: gunakan Default, Empty, Loading, Error, Success, atau Custom
+       * - notes: tulis perilaku/aturan implementasi, satu per baris bila perlu.
+       */
+      const handover = {
+        projectName: "Handover screens",
+        description: "Dokumentasi visual untuk implementasi developer",
+        updated: "6 Oktober 2026",
+        modules: [
+          {
+            name: "Gmail",
+            description: "Contoh format. Ganti atau tambahkan screen dari flow yang sedang dikerjakan.",
+            screens: [
+              { id: "GML-01", title: "Inbox", state: "Default", document: "assets/screens/gmail-01-inbox.html", notes: "Daftar email utama dengan unread indicator, preview isi email, dan waktu pesan.\nMail list dapat di-scroll; header dan bottom navigation tetap pada posisinya." },
+              { id: "GML-02", title: "Detail Inbox", state: "Default", document: "assets/screens/gmail-02-detail-inbox.html", notes: "Terbuka ketika pengguna memilih salah satu item pada mail list di Inbox.\nMenampilkan isi email, attachment, serta aksi Reply dan Forward." },
+              { id: "GML-03", title: "Inbox menu", state: "Bottom sheet open", document: "assets/screens/gmail-03-inbox-bottom-sheet.html", notes: "Muncul ketika pengguna menekan “Inbox” dengan ikon chevron-down pada header.\nBottom sheet berisi pilihan mailbox: Inbox, Drafts, Sent, Trash, dan Spam." }
+            ]
+          }
+        ]
+      };
+
+      const $ = (selector) => document.querySelector(selector);
+      let activeModule = 0;
+      $("#project-name").textContent = handover.projectName;
+      $("#project-description").textContent = handover.description;
+      $("#last-updated").textContent = `Terakhir diperbarui: ${handover.updated}`;
+
+      function placeholder(screen) {
+        return `<div class="placeholder"><strong>Preview belum ditambahkan</strong><span>Simpan gambar sebagai<br>assets/screens/${screen.id.toLowerCase()}.png</span></div>`;
+      }
+      function render() {
+        const module = handover.modules[activeModule];
+        $("#tabs").innerHTML = handover.modules.map((item, index) => `<button class="tab" role="tab" aria-selected="${index === activeModule}" data-index="${index}">${item.name}</button>`).join("");
+        $("#module-title").textContent = module.name;
+        $("#module-description").textContent = module.description || "";
+        $("#screen-count").textContent = `${module.screens.length} screen`;
+        $("#screen-grid").innerHTML = module.screens.map((screen, index) => `
+          <article class="screen-card">
+            <button class="screen-button" aria-label="Buka ${screen.id} ${screen.title}" data-screen="${index}">
+              ${screen.document ? `<div class="screen-html"><iframe src="${screen.document}" title="${screen.id} — ${screen.title}" loading="lazy"></iframe></div>` : placeholder(screen)}
+            </button>
+            <div class="card-title"><h3>${screen.id} — ${screen.title}</h3><span class="state">${screen.state}</span></div>
+            <p class="notes">${screen.notes.split("\n")[0]}</p>
+          </article>`).join("");
+        document.querySelectorAll(".tab").forEach(button => button.addEventListener("click", () => { activeModule = Number(button.dataset.index); render(); }));
+        document.querySelectorAll("[data-screen]").forEach(button => button.addEventListener("click", () => openPreview(module.screens[Number(button.dataset.screen)])));
+      }
+      function openPreview(screen) {
+        $("#modal-title").textContent = `${screen.id} — ${screen.title}`;
+        $("#modal-state").textContent = screen.state;
+        $("#modal-notes").textContent = screen.notes;
+        $("#modal-media").innerHTML = screen.document ? `<iframe src="${screen.document}" title="${screen.id} — ${screen.title}"></iframe>` : placeholder(screen);
+        $("#preview-dialog").showModal();
+      }
+      $("#close-dialog").addEventListener("click", () => $("#preview-dialog").close());
+      $("#preview-dialog").addEventListener("click", event => { if (event.target === $("#preview-dialog")) $("#preview-dialog").close(); });
+      render();
+    </script>
+  </body>
+</html>
